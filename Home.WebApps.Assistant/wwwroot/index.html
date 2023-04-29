@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Sec App</title>
+    <script src="scripts/jquery-3.5.1.min.js"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-sanitize.min.js"></script>
+    <script src="scripts/angular-animate.min.js"></script>
+    <script src="scripts/signalr.min.js"></script>
+    <script src="/common/manoir.js"></script>
+    <script src="AssistantApp.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="main.css" rel="stylesheet" />
+    <link href="index.css" rel="stylesheet" />
+    <link href="/common/manoir.css" rel="stylesheet" />
+
+    <meta name="viewport" content="initial-scale=1;width:device-width" />
+
+</head>
+<body ng-app="AssistantApp" ng-controller="DefaultPage" ng-class="currentPresence!=null && currentPresence.privacyModeActivated?'privacy-mode-activated':'no-privacy-mode'">
+
+    <manoir-menu-bar></manoir-menu-bar>
+
+    <main class="full-background">
+
+        <img class="img-back" src="streamline-icon-bird-house.png" ng-show="currentPresence!=null && !currentPresence.privacyModeActivated" />
+        <img class="img-back" src="streamline-icon-lock-4.png" ng-show="currentPresence!=null && currentPresence.privacyModeActivated" />
+
+        <section class="defaultPage">
+            <div class="loading-message" ng-show="Loading">...</div>
+            <div class="no-one-home-message" ng-show="!Loading && currentPresence!=null && currentPresence.mainUsers.length==0 && currentPresence.guests.length==0"><img src="streamline-icon-bird-house.png" /><p>Aucune présence</p></div>
+           
+        </section>
+    </main>
+
+
+</body>
+</html>

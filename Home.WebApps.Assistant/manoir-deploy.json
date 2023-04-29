@@ -1,0 +1,6 @@
+{
+  "Kind": "WebApps",
+  "Name": "Assistant",
+  "ImageName": "webapps-assistant",
+  "DockerFile": "DockerFile.Release"
+}

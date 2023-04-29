@@ -1,0 +1,20 @@
+﻿
+
+main p {
+    font-size: 60px;
+    margin: 0 0 10px 0;
+    font-weight: bold;
+    max-width: 50%;
+}
+
+
+
+.img-back {
+    position: fixed;
+    width: 200px;
+    top: 30px;
+    left: calc(100% - 120px);
+    opacity: 0.3;
+    z-index: 2;
+    transform: rotate(10deg);
+}
